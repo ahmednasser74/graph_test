@@ -9,6 +9,7 @@ class OrdersInitialState extends OrdersState {}
 
 class OrdersLoading extends OrdersState {}
 
+// ignore: must_be_immutable
 class OrdersSuccessState extends OrdersState {
   final List<OrderItemResponseModel> orders;
   OrdersMetricsData metrics;
@@ -16,7 +17,7 @@ class OrdersSuccessState extends OrdersState {
   OrdersSuccessState(this.orders, this.metrics);
 
   @override
-  List<Object?> get props => [orders];
+  List<Object?> get props => [orders, metrics];
 }
 
 class OrdersErrorState extends OrdersState {
